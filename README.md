@@ -70,25 +70,21 @@ O asterisco (*) é um coringa para "todas as colunas".
 B. Ver colunas ESPECÍFICAS:
 É mais rápido e limpo pedir apenas o que você precisa.
 
-SQL
-SELECT name, status FROM applications;
+<img width="459" height="114" alt="image" src="https://github.com/user-attachments/assets/6b3fd449-a2e0-44a7-9fe9-b1bcc16d8011" />
+
 
 
 C. Filtrar linhas com WHERE:
 Usado para encontrar dados específicos.
 
-SQL
-SELECT * FROM applications
-WHERE status = 'active';
+<img width="335" height="146" alt="image" src="https://github.com/user-attachments/assets/1a1de9b1-30e9-43dd-996f-5efd3fe86fb3" />
+
 
 
 D. Combinar filtros com AND:
 Para encontrar dados que atendam a MÚLTIPLAS condições.
 
-SQL
-SELECT * FROM applications
-WHERE status = 'pending'
-  AND owner_id = 4;
+<img width="377" height="173" alt="image" src="https://github.com/user-attachments/assets/97aa08f2-2f07-4ef0-9262-55bff345dbd1" />
 
 
 
@@ -103,13 +99,8 @@ Nós aprendemos que tentar inserir um texto (como 'off') em uma coluna que esper
 ✅ Certo: INSERT INTO air_conditioners (power_status) VALUES (0);
 Exemplo Completo:
 
-SQL
+<img width="777" height="196" alt="image" src="https://github.com/user-attachments/assets/445287b1-d111-4d70-a412-3e37e82a32e2" />
 
-
-INSERT INTO all_things
-    (device_id, power_status, operation_mode, fan_speed, setpoint)
-VALUES
-    (1, 0, 'cool', 0, 23);
 
 
 
@@ -119,12 +110,8 @@ Usado para modificar dados que já existem.
 ⚠️ PERIGO! Sempre, SEMPRE use a cláusula WHERE em um UPDATE. Se você esquecer, você atualizará TODAS AS LINHAS da tabela por acidente.
 Exemplo: Mudar a temperatura (setpoint) do ar-condicionado que acabamos de criar.
 
-SQL
+<img width="294" height="162" alt="image" src="https://github.com/user-attachments/assets/a18ff152-333f-49e5-ac94-bf9e27eaea9e" />
 
-
-UPDATE all_things
-SET setpoint = 24
-WHERE device_id = 1;
 
 
 SET setpoint = 24: Define o novo valor.
@@ -136,11 +123,8 @@ Usado para remover linhas de uma tabela.
 ⚠️ PERIGO MÁXIMO! Este é o comando mais perigoso. Se você esquecer o WHERE, você APAGARÁ TODOS OS DADOS da tabela.
 Exemplo: Apagar o ar-condicionado de teste que criamos.
 
-SQL
+<img width="344" height="131" alt="image" src="https://github.com/user-attachments/assets/0d6214af-d6a8-4c29-84f1-b8195e31ef09" />
 
-
-DELETE FROM all_things
-WHERE device_id = 1;
 
 
 WHERE device_id = 1: Especifica qual linha deve ser apagada.
@@ -155,18 +139,8 @@ ON applications.owner_id = users.id
 (Onde o owner_id da aplicação for igual ao id do usuário)
 Exemplo Completo:
 
-SQL
+<img width="555" height="337" alt="image" src="https://github.com/user-attachments/assets/1f9a06ee-9e1b-4ed4-aede-1d6986a923c4" />
 
-
-SELECT
-    applications.name,
-    applications.status,
-    users.full_name,
-    users.email
-FROM
-    applications
-INNER JOIN
-    users ON applications.owner_id = users.id;
 
 
 Este comando nos deu uma tabela nova, combinada, mostrando o nome da aplicação ao lado do nome e email do seu verdadeiro dono.
